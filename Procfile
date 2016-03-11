@@ -1,1 +1,1 @@
-web: hide hidden-poll
+web: hide hidden-polls
