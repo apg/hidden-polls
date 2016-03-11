@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/apg/hidden-poll",
+	"ImportPath": "github.com/apg/hidden-polls",
 	"GoVersion": "go1.6",
 	"Packages": [
 		"./..."
