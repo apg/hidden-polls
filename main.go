@@ -70,6 +70,7 @@ func (d *pollDAL) GetByID(pollId int64) (*poll, error) {
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
 	p := &poll{}
 	if rows.Next() {
@@ -87,6 +88,7 @@ func (d *pollDAL) GetLatest() (*poll, error) {
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
 	p := &poll{}
 	if rows.Next() {
@@ -104,6 +106,7 @@ func (d *pollDAL) GetChoices(pollId int64) ([]*choice, error) {
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
 	var choices []*choice
 
@@ -137,6 +140,7 @@ ORDER BY count(a.choice_id) DESC`
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
 	var summaries []*summary
 	var totalVotes int64
