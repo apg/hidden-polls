@@ -10,7 +10,7 @@ $ git clone https://github.com/apg/hidden-polls
 $ cd hidden-polls/
 $ heroku create
 $ heroku buildpacks:add heroku/go
-$ heroku buildpacks:add https://github.com/apg/buildpack-tor-hidden-service
+$ heroku buildpacks:add https://github.com/apg/heroku-buildpack-tor.git
 $ heroku addons:create heroku-postgresql:hobby-basic
 $ heroku pg:psql < schema/schema.sql
 $ heroku pg:psql
