@@ -19,9 +19,17 @@ app-name => INSERT INTO choices(poll_id, answer, created_at) (1, 'Answer 1', NOW
 app-name => INSERT INTO choices(poll_id, answer, created_at) (1, 'Answer 2', NOW());
 app-name => INSERT INTO choices(poll_id, answer, created_at) (1, 'Answer 3', NOW());
 app-name => INSERT INTO choices(poll_id, answer, created_at) (1, 'Answer 4', NOW());
+# If you have a HIDDEN_PRIVATE_KEY and HIDDEN_DOT_ONION, set those now:
 $ heroku config:set HIDDEN_PRIVATE_KEY=<YOUR HIDDEN KEY>
 $ heroku config:set HIDDEN_DOT_ONION=<YOUR DOT ONION>
+# If you don't have them yet... push to heroku. You need an initial build such that you have the tor binary in the slug.
 $ git push heroku master
+$ heroku run bash
+# perform the steps in the README here: https://github.com/apg/heroku-buildpack-tor#how-do-you-get-these-variables
+$ heroku config:set HIDDEN_PRIVATE_KEY=<YOUR HIDDEN KEY>
+$ heroku config:set HIDDEN_DOT_ONION=<YOUR DOT ONION>
+$ git push heroku master 
 ```
+
 
 ## Copyright 2016 Andrew Gwozdziewyczo
